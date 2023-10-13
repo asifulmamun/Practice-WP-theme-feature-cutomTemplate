@@ -27,35 +27,30 @@ wp_head(); // wp foot
 
     <header>
         <!-- Top Header -->
-        <section class="bg-[#020E28]">
-            <div class="w-3/4 mx-auto py-6">
-                <div class="grid grid-cols-12 gap-4">
-                    <div class="col-span-4"></div>
-                    <div class="col-span-4 flex">
-                        <a class="text-[#e1e1e1] text-sm" href="tel:+786-842-0320">
-                            <span class="flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" class="w-3.5 h-3.5" style="stroke:#027AFB;">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                                </svg>
-                                &nbsp;786-842-0320
-                            </span>
-                        </a>
-                        &nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a class="text-[#e1e1e1] text-sm" href="mailto:sales@anncarequipment.com">
-                            <span class="flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" class="w-3.5 h-3.5" style="stroke:#027AFB;">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                                </svg>
-                                &nbsp;sales@anncarequipment.com
-                            </span>
-                        </a>
-
-                    </div>
-                    <div class="col-span-4"></div>
+        <section class="py-6 bg-[#020E28]">
+            <div class="flex justify-end px-4 md:justify-center">
+                <div class="grid grid-cols-12 justify-items-end items-center">
+                    <a class="col-span-12 md:col-span-5 w-fit text-[#e1e1e1] hover:text-yellow-500 text-sm" href="tel:+786-842-0320">
+                        <span class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" class="w-3.5 h-3.5" style="stroke:#027AFB;">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                            </svg>
+                            &nbsp;786-842-0320
+                        </span>
+                    </a>
+                    <span class="hidden md:block md:mx-auto md:col-span-1">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                    <a class="col-span-12 md:col-span-5 w-fit text-[#e1e1e1] hover:text-yellow-500 text-sm" href="mailto:sales@anncarequipment.com">
+                        <span class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" class="w-3.5 h-3.5" style="stroke:#027AFB;">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                            </svg>
+                            &nbsp;sales@anncarequipment.com
+                        </span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -63,33 +58,31 @@ wp_head(); // wp foot
         <!-- Menu Section -->
         <section class="w-3/4 mx-auto">
             <div class="grid grid-cols-12 gap-4 items-center">
-
                 <!-- Logo -->
-                <div class="col-span-4">
+                <div class="md:col-span-2 2xl:col-span-2">
                     <a href="<?php echo esc_url(home_url('/')); ?>">
-                      <?php
-                        if ( has_custom_logo() ) {
-                          the_custom_logo();
-                        } else {
-                          echo get_bloginfo('name');
-                        }
-                      ?>
-                  </a>
+                        <?php
+                            if ( has_custom_logo() ) {
+                                the_custom_logo();
+                            } else {
+                                echo get_bloginfo('name');
+                            }
+                        ?>
+                    </a>
                 </div>
                 <!-- Nav -->
-                <div class="xTradeNav col-span-6">
+                <div class="xTradeNav md:col-span-7 2xl:col-span-8">
                     <?php
-                      wp_nav_menu(array(
-                        'theme_location' => 'xtradeMenu',
-                        'menu_id' => 'xtrade-menu',
-                        'container' => 'nav',
-                        'container_class' => 'menu-class', // Add a custom class to the container if desired
-                        'menu_class' => 'menu-list-class', // Add a custom class to the menu ul if desired
-                    ));
+                        wp_nav_menu(array(
+                            'theme_location' => 'xtradeMenu',
+                            'menu_id' => 'xtrade-menu',
+                            'container' => 'nav',
+                            'container_class' => 'menu-class', // Add a custom class to the container if desired
+                            'menu_class' => 'menu-list-class', // Add a custom class to the menu ul if desired
+                        ));
                     ?>
                 </div>
-
-                <div class="col-span-2">
+                <div class="md:col-span-3 2xl:col-span-2">
                     <button
                         class="flex bg-gradient-to-r from-yellow-500 from-10% to-blue-500 py-4 px-6 text-white rounded-full">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -100,7 +93,6 @@ wp_head(); // wp foot
                         &nbsp;Need Estimate?
                     </button>
                 </div>
-
 
             </div>
         </section>
