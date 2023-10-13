@@ -1,69 +1,59 @@
 <?php
 /**
- * The header for Astra Theme.
+ * The header for our theme
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Astra
- * @since 1.0.0
+ * @package seopage1
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
-
-?><!DOCTYPE html>
-<?php astra_html_before(); ?>
+?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-<?php astra_head_top(); ?>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<?php 
-if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
-	?>
-	 <link rel="profile" href="https://gmpg.org/xfn/11"> 
-	 <?php
-} 
-?>
-<?php wp_head(); ?>
-<?php astra_head_bottom(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<?php wp_head(); ?>
 </head>
 
-<body <?php astra_schema_body(); ?> <?php body_class(); ?>>
-<?php astra_body_top(); ?>
+<body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'seopage1' ); ?></a>
 
-<a
-	class="skip-link screen-reader-text"
-	href="#content"
-	role="link"
-	title="<?php echo esc_attr( astra_default_strings( 'string-header-skip-link', false ) ); ?>">
-		<?php echo esc_html( astra_default_strings( 'string-header-skip-link', false ) ); ?>
-</a>
+	<header id="masthead" class="site-header">
+		<div class="site-branding">
+			<?php
+			the_custom_logo();
+			if ( is_front_page() && is_home() ) :
+				?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php
+			else :
+				?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+			endif;
+			$seopage1_description = get_bloginfo( 'description', 'display' );
+			if ( $seopage1_description || is_customize_preview() ) :
+				?>
+				<p class="site-description"><?php echo $seopage1_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+			<?php endif; ?>
+		</div><!-- .site-branding -->
 
-<div
-<?php
-	echo astra_attr(
-		'site',
-		array(
-			'id'    => 'page',
-			'class' => 'hfeed site',
-		)
-	);
-	?>
->
-	<?php
-	astra_header_before();
-
-	astra_header();
-
-	astra_header_after();
-
-	astra_content_before();
-	?>
-	<div id="content" class="site-content">
-		<div class="ast-container">
-		<?php astra_content_top(); ?>
+		<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'seopage1' ); ?></button>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				)
+			);
+			?>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->

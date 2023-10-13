@@ -1,44 +1,57 @@
 <?php
 /**
- * The main template file.
+ * The main template file
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Astra
- * @since 1.0.0
+ * @package seopage1
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+get_header();
+?>
 
-get_header(); ?>
-<?php if ( astra_page_layout() == 'left-sidebar' ) : ?>
+	<main id="primary" class="site-main">
 
-	<?php get_sidebar(); ?>
-
-<?php endif ?>
-	<div id="primary" <?php astra_primary_class(); ?>>
 		<?php
-		astra_primary_content_top();
+		if ( have_posts() ) :
 
-		astra_content_loop();
+			if ( is_home() && ! is_front_page() ) :
+				?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
+				<?php
+			endif;
 
-		astra_pagination();
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
 
-		astra_primary_content_bottom();
+				/*
+				 * Include the Post-Type-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_type() );
+
+			endwhile;
+
+			the_posts_navigation();
+
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif;
 		?>
-	</div><!-- #primary -->
+
+	</main><!-- #main -->
+
 <?php
-if ( astra_page_layout() == 'right-sidebar' ) :
-
-	get_sidebar();
-
-endif;
-
+get_sidebar();
 get_footer();

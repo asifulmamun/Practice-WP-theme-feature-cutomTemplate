@@ -1,43 +1,51 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The template for displaying archive pages
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Astra
- * @since 1.0.0
+ * @package seopage1
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+get_header();
+?>
 
-get_header(); ?>
+	<main id="primary" class="site-main">
 
-<?php if ( astra_page_layout() == 'left-sidebar' ) : ?>
+		<?php if ( have_posts() ) : ?>
 
-	<?php get_sidebar(); ?>
+			<header class="page-header">
+				<?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
+			</header><!-- .page-header -->
 
-<?php endif ?>
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
 
-	<div id="primary" <?php astra_primary_class(); ?>>
+				/*
+				 * Include the Post-Type-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_type() );
 
-		<?php astra_primary_content_top(); ?>
+			endwhile;
 
-		<?php astra_archive_header(); ?>
+			the_posts_navigation();
 
-		<?php astra_content_loop(); ?>
+		else :
 
-		<?php astra_pagination(); ?>
+			get_template_part( 'template-parts/content', 'none' );
 
-		<?php astra_primary_content_bottom(); ?>
+		endif;
+		?>
 
-	</div><!-- #primary -->
+	</main><!-- #main -->
 
-<?php if ( astra_page_layout() == 'right-sidebar' ) : ?>
-
-	<?php get_sidebar(); ?>
-
-<?php endif ?>
-
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();

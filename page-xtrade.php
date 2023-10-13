@@ -101,41 +101,137 @@ wp_head(); // wp foot
 
 
     <!-- Slider main container -->
-    <div id="xTradeSlider" class="swiper bg-[#020e28] relative">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
+    <div id="xTradeSlider" class="bg-[#020e28] relative">
+        
 
-            <div class="swiper-slide xTradeSliderItems relative bg-no-repeat bg-cover bg-center"
+            <div class="xTradeSliderItems relative bg-no-repeat bg-cover bg-center"
                 style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/tradella-international-Home-page.png);">
                 <div class="w-3/4 mx-auto py-6">
                     <div class="grid grid-cols-12 gap-4">
 
-                        <div class="col-span-5 uppercase font-bold pt-20">
-                            <h1 class="text-7xl text-white leading-normal pb-4"><span
-                                    class="text-yellow-400">Grow</span> Your Business <span class="text-blue-400">With
-                                    Anncar</span></h1>
-                            <h3 class="text-white">High Quality Heavy Equipment Spare Parts Supplier</h3>
+                        <div class="col-span-12 md:col-span-5 uppercase font-bold pt-20">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+
+
+                                    <div class="swiper-slide">
+                                        <h1 class="text-7xl text-white leading-normal pb-4"><span
+                                                class="text-yellow-400">Grow</span> Your Business <span class="text-blue-400">With
+                                                Anncar</span></h1>
+                                        <h3 class="text-white">High Quality Heavy Equipment Spare Parts Supplier</h3>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <h1 class="text-7xl text-white leading-normal pb-4"><span
+                                                class="text-yellow-400">Grow</span> Your Business <span class="text-blue-400">With
+                                                Anncar</span></h1>
+                                        <h3 class="text-white">High Quality Heavy Equipment Spare Parts Supplier</h3>
+                                    </div>
+
+
+                                    <div class="swiper-slide">
+                                        <h1 class="text-7xl text-white leading-normal pb-4"><span
+                                                class="text-yellow-400">Grow</span> Your Business <span class="text-blue-400">With
+                                                Anncar</span></h1>
+                                        <h3 class="text-white">High Quality Heavy Equipment Spare Parts Supplier</h3>
+                                    </div>
+
+
+                                </div>
+                            </div>    
                         </div>
 
-                        <div class="col-span-7 relative">
-                            <img class="absolute" style="width:60%; top:20%; right:20%"
-                                src="<?php echo  get_template_directory_uri() ;?>/assets/images/tradella-international-Home-page-l01.png"
-                                alt="">
-                            <img class="absolute" style="width: 60%; top:13%; right:24%"
-                                src="<?php echo  get_template_directory_uri() ;?>/assets/images/tradella-international-Home-page-l1.png"
-                                alt="">
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="col-span-12 md:col-span-7 relative">
+
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img class="absolute image-layer" style="width:60%; top:20%; right:20%;"
+                                            src="<?php echo  get_template_directory_uri() ;?>/assets/images/tradella-international-Home-page-l01.png"
+                                            alt="">
+                                        <img class="absolute image-layer" style="width: 60%; top:13%; right:24%;"
+                                            src="<?php echo  get_template_directory_uri() ;?>/assets/images/tradella-international-Home-page-l1.png"
+                                            alt="">
+                                    </div>
+        
+        
+                                    <div class="swiper-slide">
+                                        <img class="absolute image-layer" style="width:60%; top:20%; right:20%;"
+                                            src="<?php echo  get_template_directory_uri() ;?>/assets/images/tradella-international-Home-page-l01.png"
+                                            alt="">
+                                        <img class="absolute image-layer" style="width: 60%; top:13%; right:24%;"
+                                            src="<?php echo  get_template_directory_uri() ;?>/assets/images/tradella-international-Home-page-l1.png"
+                                            alt="">
+                                    </div>
+        
+        
+                                    <div class="swiper-slide">
+                                        <img class="absolute image-layer" style="width:60%; top:20%; right:20%;"
+                                            src="<?php echo  get_template_directory_uri() ;?>/assets/images/tradella-international-Home-page-l01.png"
+                                            alt="">
+                                        <img class="absolute image-layer" style="width: 60%; top:13%; right:24%;"
+                                            src="<?php echo  get_template_directory_uri() ;?>/assets/images/tradella-international-Home-page-l1.png"
+                                            alt="">
+                                    </div>
+                                    
+                                    
+                                </div>
+                                <div class="swiper-pagination absolute"></div>
+                            </div>
+
+
+
+                            
                         </div>
+
+
                     </div>
                 </div>
             </div>
 
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-        </div>
 
-        <!-- If we need pagination -->
-        <div class="swiper-pagination absolute"></div>
+
+
+
+
+
+
+
     </div>
+
+
+
+<style>
+        /* Add your CSS styles here */
+        /* .swiper-container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .swiper-slide {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .swiper-slide h1, .swiper-slide img {
+            position: absolute;
+            transition: transform 0.3s ease-in-out;
+        } */
+    </style>
+
+
 
 
 
@@ -227,45 +323,49 @@ wp_head(); // wp foot
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
     const swiper = new Swiper('.swiper', {
-        // Optional parameters
         direction: 'horizontal',
+        spaceBetween: '10%',
+        parallaxed: true,
         loop: true,
+
+        grabCursor: true,
+        centeredSlides: true,
+        // slidesPerView: 'auto',
+        
+        
+        // effect: 'coverflow',
+        // coverflowEffect: {
+            // rotate: 50,
+            // stretch: 0,
+            // depth: 100,
+            // modifier: 1,
+        // slideShadows: true,
+        // },
 
         // If we need pagination
         pagination: {
             el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        on: {
+            slideChangeTransitionStart: function () {
+                var layers = this.slides[this.activeIndex].querySelectorAll('.text-layer, .image-layer');
+                layers.forEach(function (layer) {
+                    layer.style.transform = 'translateX(0)';
+                });
+            },
         },
 
 
+        // navigation: {
+        //     nextEl: '.swiper-button-next',
+        //     prevEl: '.swiper-button-prev',
+        // },
+
     });
+
     </script>
-
-
-
-    <!-- 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="<?php echo  get_template_directory_uri() ;?>/assets/js/owl.carousel.min.js"></script>
-    <script>
-      // $('.owl-carousel').owlCarousel({
-      //     autoWidth: false,
-      //     loop: true,
-      //     margin:2,
-      //     nav:true,
-      //     dots: true,
-          // responsive:{
-          //     0:{
-          //         items:1
-          //     },
-          //     600:{
-          //         items:3
-          //     },
-          //     1000:{
-          //         items:5
-          //     }
-          // }
-      // })
-    </script>
--->
 </body>
 
 

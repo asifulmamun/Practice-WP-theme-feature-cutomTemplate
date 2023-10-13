@@ -1,43 +1,53 @@
 <?php
 /**
- * The template for displaying search results pages.
+ * The template for displaying search results pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Astra
- * @since 1.0.0
+ * @package seopage1
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+get_header();
+?>
 
-get_header(); ?>
+	<main id="primary" class="site-main">
 
-<?php if ( astra_page_layout() == 'left-sidebar' ) : ?>
+		<?php if ( have_posts() ) : ?>
 
-	<?php get_sidebar(); ?>
+			<header class="page-header">
+				<h1 class="page-title">
+					<?php
+					/* translators: %s: search query. */
+					printf( esc_html__( 'Search Results for: %s', 'seopage1' ), '<span>' . get_search_query() . '</span>' );
+					?>
+				</h1>
+			</header><!-- .page-header -->
 
-<?php endif ?>
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
 
-	<div id="primary" <?php astra_primary_class(); ?>>
+				/**
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', 'search' );
 
-		<?php astra_primary_content_top(); ?>
+			endwhile;
 
-		<?php astra_archive_header(); ?>
+			the_posts_navigation();
 
-		<?php astra_content_loop(); ?>		
+		else :
 
-		<?php astra_pagination(); ?>
+			get_template_part( 'template-parts/content', 'none' );
 
-		<?php astra_primary_content_bottom(); ?>
+		endif;
+		?>
 
-	</div><!-- #primary -->
+	</main><!-- #main -->
 
-<?php if ( astra_page_layout() == 'right-sidebar' ) : ?>
-
-	<?php get_sidebar(); ?>
-
-<?php endif ?>
-
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();
