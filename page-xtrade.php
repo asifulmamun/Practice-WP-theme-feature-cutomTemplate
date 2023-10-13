@@ -123,7 +123,7 @@ wp_head(); // wp foot
 
                                     <div class="swiper-slide">
                                         <h1 class="text-7xl text-white leading-normal pb-4"><span
-                                                class="text-yellow-400">Grow</span> Your Business <span class="text-blue-400">With
+                                                class="text-yellow-400">2 Grow</span> Your Business <span class="text-blue-400">With
                                                 Anncar</span></h1>
                                         <h3 class="text-white">High Quality Heavy Equipment Spare Parts Supplier</h3>
                                     </div>
@@ -131,7 +131,7 @@ wp_head(); // wp foot
 
                                     <div class="swiper-slide">
                                         <h1 class="text-7xl text-white leading-normal pb-4"><span
-                                                class="text-yellow-400">Grow</span> Your Business <span class="text-blue-400">With
+                                                class="text-yellow-400">3 Grow</span> Your Business <span class="text-blue-400">With
                                                 Anncar</span></h1>
                                         <h3 class="text-white">High Quality Heavy Equipment Spare Parts Supplier</h3>
                                     </div>
@@ -168,10 +168,7 @@ wp_head(); // wp foot
         
                                     <div class="swiper-slide">
                                         <img class="absolute image-layer" style="width:60%; top:20%; right:20%;"
-                                            src="<?php echo  get_template_directory_uri() ;?>/assets/images/tradella-international-Home-page-l01.png"
-                                            alt="">
-                                        <img class="absolute image-layer" style="width: 60%; top:13%; right:24%;"
-                                            src="<?php echo  get_template_directory_uri() ;?>/assets/images/tradella-international-Home-page-l1.png"
+                                            src="<?php echo  get_template_directory_uri() ;?>/assets/images/s2.png"
                                             alt="">
                                     </div>
         
