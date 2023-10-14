@@ -138,14 +138,14 @@ add_action( 'widgets_init', 'seopage1_widgets_init' );
  * Enqueue scripts and styles.
  */
 function seopage1_scripts() {
-	wp_enqueue_style( 'seopage1-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'seopage1-style', 'rtl', 'replace' );
+	// wp_enqueue_style( 'seopage1-style', get_stylesheet_uri(), array(), _S_VERSION );
+	// wp_style_add_data( 'seopage1-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'seopage1-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	// wp_enqueue_script( 'seopage1-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	// 	wp_enqueue_script( 'comment-reply' );
+	// }
 }
 add_action( 'wp_enqueue_scripts', 'seopage1_scripts' );
 
@@ -194,13 +194,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 // JS
 function enqueue_my_script() {
-	wp_enqueue_script('tailwindCss', 'https://cdn.tailwindcss.com', '', '3.3.3', true);
+	wp_enqueue_script('app', get_template_directory_uri() . '/assets/build/js/app.js', '', '1.0.0', true);
+	// wp_enqueue_script('tailwindCss', 'https://cdn.tailwindcss.com', '', '3.3.3', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_my_script');
 
 // CSS
 function enqueue_custom_css() {
-	wp_enqueue_style('xtrade', get_template_directory_uri() . '/xtrade.css');
+	wp_enqueue_style('xtrade', get_template_directory_uri() . '/assets/build/css/app.css');
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_css');
 
