@@ -171,7 +171,7 @@ wp_head(); // wp foot
                                         alt="">
                                 </div>
                             </div>
-                            <div class="absolute swiper-pagination"></div>
+                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
 
